@@ -21,10 +21,10 @@ searchFile(filename, searchstring, found) [debug] ; procedure for searching file
 			set found = found _ "Line "_ ctr _ ": " _ $replace(data, searchstring, "<"_searchstring_">") _ $Char(10) //$$$NL
 		}
 	
-		if debug {
-			use 0
-			write data, !
-		}
+		//if debug {
+			//use 0
+			//write data, !
+		//}
 		set ctr = ctr + 1
 	}	
 	
@@ -34,9 +34,9 @@ OnError ; label for catching end of file
    if debug{
    		WRITE "OnError $ESTACK= ",$ESTACK  , ! 
    		WRITE "$ZERROR = ",$ZERROR,!
-   		write $zu(56,0), !
-   		write $zu(56,1), !
-   		write $zu(56,2), !
+   		write "$zu(56,0) " , $zu(56,0), !
+   		write "$zu(56,1) " , $zu(56,1), !
+   		write "$zu(56,2) " , $zu(56,2), !
    }
    set pos = $find($ZERROR, "<ENDOFFILE>")
    if pos {
