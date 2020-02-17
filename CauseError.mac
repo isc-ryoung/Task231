@@ -1,6 +1,5 @@
 ROUTINE CauseError
 
-
 CauseError
 	set debug = 1
 	do searchFile("A-Rose.txt", "none", .found)
